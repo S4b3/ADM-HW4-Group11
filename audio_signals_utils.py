@@ -76,10 +76,10 @@ def load_audio_peaks(audio, offset, duration, hop_size):
         track, sr = librosa.load(audio, offset=offset, duration=duration)
         onset_env = librosa.onset.onset_strength(track, sr=sr, hop_length=hop_size)
         peaks = librosa.util.peak_pick(onset_env, 10, 10, 10, 10, 0.5, 0.5)
+        return track, sr, onset_env, peaks
     except Exception as e:
         print('An error occurred processing ', str(audio))
         print(e)
 
-    return track, sr, onset_env, peaks
     
     

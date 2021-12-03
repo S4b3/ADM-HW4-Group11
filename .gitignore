@@ -130,6 +130,5 @@ dmypy.json
 
 # dataset ignores
 *.zip
-*.csv
 *.mp3
 *.wav
