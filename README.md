@@ -15,7 +15,7 @@ For better comprehension we have extracted most of the functions we coded inside
 - [./audio_signals_utils.py](https://github.com/S4b3/ADM-HW4-Group11/blob/main/audio_signals_utils.py)    
 - [./hash_utils.py](https://github.com/S4b3/ADM-HW4-Group11/blob/main/hash_utils.py)    
 - [./lsh_utils.py](https://github.com/S4b3/ADM-HW4-Group11/blob/main/lsh_utils.py)    
-- [./functions.py](inserisci link qui)    
+- [./functions.py](https://github.com/S4b3/ADM-HW4-Group11/blob/main/functions.py)    
 
 Every module has been documented, so feel free to read the documentation to understand the code more easily.
 
