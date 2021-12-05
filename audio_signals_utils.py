@@ -6,8 +6,7 @@ import subprocess
 import librosa
 import librosa.display
 import IPython.display as ipd
-from pathlib import Path, PurePath   
-from tqdm.notebook import tqdm
+from pathlib import Path
 
 N_TRACKS = 1413
 HOP_SIZE = 512
