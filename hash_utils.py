@@ -73,12 +73,12 @@ def extractMinHashSignature(audio, hashAmount, coefficientsMatrix, nextPrimeNumb
     and hashing them via the MinHash algorithm.   
     This makes use of [customHash] function.
     '''
-    _, _, _, peaks = audio_signals_utils.load_audio_peaks(audio, OFFSET, DURATION, HOP_SIZE)
+    _, _, onset_env, peaks = audio_signals_utils.load_audio_peaks(audio, OFFSET, DURATION, HOP_SIZE)
     # initialize track signature
     trackSignature = []
     # for every hashfunction we generated, extract the minhash and add it to the signature
     for i in range(0, hashAmount) :
-        hashValues = np.array([ customHash(x, coefficientsMatrix[i][0], coefficientsMatrix[i][1], nextPrimeNumberAfterUpperBound) for x in peaks])
+        hashValues = np.array([ customHash(np.round(x,3), coefficientsMatrix[i][0], coefficientsMatrix[i][1], nextPrimeNumberAfterUpperBound) for x in onset_env[peaks]])
         # Add the smallest hash value as a component of the signature.
         trackSignature.append(hashValues.min())
     # return current signature
